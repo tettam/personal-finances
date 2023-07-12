@@ -13,7 +13,7 @@ export const filterListByMonth = (list: Item[] , date: string) => {
   console.log(list[1].date.getFullYear())
   const newList = list.filter(item => {
     return (
-    item.date.getFullYear() === parseInt(year) &&
+    item.date.getFullYear() === parseInt(year) ||
     item.date.getMonth() + 1 === parseInt(month)
     );
   })
