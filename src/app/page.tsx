@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react"
 import { items } from "./data/items"
 import { Item } from "./types/Item"
-import { getCurrentMonth } from "./helpers/dateFilter"
+import { filterListByMonth, getCurrentMonth } from "./helpers/dateFilter"
+import { TableArea } from "./components/TableArea"
 
 export default function Page() {
   const [list , setList] = useState<Item[]>(items)
@@ -11,8 +12,9 @@ export default function Page() {
   const [currentMonth, setCurrentMonth] = useState(getCurrentMonth());
 
   useEffect(() => {
-
-  }, [list, currentMonth])
+    const filterList = filterListByMonth(list, currentMonth);
+    setFilteredList(filterList);
+  }, [list , currentMonth])
 
 
   return (
@@ -23,7 +25,8 @@ export default function Page() {
       <div className="container m-auto max-w-screen-lg mb-12 h-screen text-black">
         {/* ÁREA DE INFORMAÇÕES */}
         {/* AREA DE INSERÇÃO */}
-        {/* TABELA DE ITENS: */}
+        
+        <TableArea list={filteredList}/>
       </div>
     </div>
   )
