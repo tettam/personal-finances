@@ -6,7 +6,7 @@ type Props = {
 }
 export const TableArea = ( {list}: Props ) => {
   return (
-    <table className="w-full bg-white-500 shadow-gray-900 border-2 p-5 mt-5 rounded-lg">
+    <table className="w-full bg-white shadow-gray-900 border-2 p-5 mt-5 rounded-lg">
       <thead className="">
         <tr>
           <th className="p-3 text-left w-28">Data</th>

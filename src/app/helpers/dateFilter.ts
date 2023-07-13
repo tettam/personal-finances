@@ -28,3 +28,17 @@ export const formatDate = (date: Date): string => {
 
   return `${day}/${month}/${year}`
 }
+
+export const formatCurrentMonth = (currentMonth: string): string => {
+  const months = [
+    'janeiro', 'fevereiro', 'março', 
+    'abril', 'maio', 'junho' ,
+    'julho', 'agosto', 'setembro',
+    'outubro', 'novembro', 'dezembro']
+  const dateSplite = currentMonth.split('-');
+  const yaer = dateSplite[0];
+  const month = dateSplite[1];
+  const dateMonth = `${months[parseInt(month) -1]}`
+  return dateMonth.substring(0,1).toLocaleUpperCase() + dateMonth.substring(1) + ' de ' + yaer
+
+}

@@ -5,6 +5,7 @@ import { items } from "./data/items"
 import { Item } from "./types/Item"
 import { filterListByMonth, getCurrentMonth } from "./helpers/dateFilter"
 import { TableArea } from "./components/TableArea"
+import { InfoArea } from "./components/InfoArea"
 
 export default function Page() {
   const [list , setList] = useState<Item[]>(items)
@@ -23,7 +24,9 @@ export default function Page() {
         <h1 className="pt-6 text text-2xl font-bold">Sistema Financeiro</h1>
       </div>
       <div className="container m-auto max-w-screen-lg mb-12 h-screen text-black">
-        {/* ÁREA DE INFORMAÇÕES */}
+        <InfoArea currentMonth={currentMonth} />
+
+
         {/* AREA DE INSERÇÃO */}
         
         <TableArea list={filteredList}/>
